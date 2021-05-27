@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App by cholis04</title>
+    <link rel="icon" href="favicon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <header class="header-section">
+        <div class="container">
+            <nav>
+                <a id="jump-to-add" class="link-add">New Book</a>
+            </nav>
+            <h1>Bookshelf App</h1>
+            <p>Arrange Books that are Finished Reading</p>
+        </div>
+    </header>
+    <div class="background-white">
+        <section id="search-box">
+            <form>
+                <input type="search" id="keyword" class="search-input"
+                    placeholder="🔎  Live search by 'Book Title' ..." />
+                <button id="search-btn" type="submit" disabled="true">Show All Books</button>
+            </form>
+        </section>
+        <div id="shelf">
+            <section id="reading">
+                <h3>Reading List (<span id="read-num">0</span>)</h3>
+                <div id="reading-list"></div>
+            </section>
+            <section id="finished">
+                <h3>Finished List (<span id="finish-num">0</span>)</h3>
+                <div id="finished-list"></div>
+            </section>
+        </div>
+    </div>
+    <div class="background-gray"></div>
+    <div class="background-white">
+        <section id="add-book">
+            <h2>New Book</h2>
+            <form id="form-add">
+                <div class="input-group">
+                    <label>Title :</label><br />
+                    <input type="text" id="title" placeholder="What is the title of the book?" class="input-form"
+                        maxlength="120" pattern="^[a-zA-Z0-9_ ]*$" required />
+                </div>
+                <div class="input-group">
+                    <label>Author :</label><br />
+                    <input type="text" id="author" placeholder="Who is the author of the book" class="input-form"
+                        maxLength="60" pattern="^[a-zA-Z0-9_ ]*$" required />
+                </div>
+                <div class="input-group">
+                    <label>Year :</label><br />
+                    <input type="number" id="year" placeholder="The year when the book was published" class="input-form"
+                        min="1900" max="2021" required />
+                </div>
+                <div class="check-group">
+                    <label for="isComplete">Finished Reading&nbsp;</label>
+
+                    <input type="checkbox" id="isComplete" />
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" id="add-btn">Add</button>
+                </div>
+
+            </form>
+        </section>
+        <footer class="footer">
+            <p>Made with 💛 by <strong>cholis04</strong></p>
+        </footer>
+    </div>
+
+    <!-- MODAL BOX -->
+    <div id="modal">
+        <section id="edit-book">
+            <h2>Edit Book</h2>
+            <form id="form-edit">
+                <input type="hidden" value="" id="book-id" />
+                <div class="input-group">
+                    <label>Title :</label><br />
+                    <input type="text" id="title-edit" placeholder="What is the title of the book?" class="input-form"
+                        maxlength="120" pattern="^[a-zA-Z0-9_ ]*$" required />
+                </div>
+                <div class="input-group">
+                    <label>Author :</label><br />
+                    <input type="text" id="author-edit" placeholder="Who is the author of the book" class="input-form"
+                        maxlength="60" pattern="^[a-zA-Z0-9_ ]*$" required />
+                </div>
+                <div class="input-group">
+                    <label>Year :</label><br />
+                    <input type="number" id="year-edit" placeholder="The year when the book was published"
+                        class="input-form" min="1900" max="2021" />
+                </div>
+                <div class="button-group">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <!-- MODAL BOX -->
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
